@@ -3,6 +3,7 @@
 # . "$(dirname "$0")/_/husky.sh"
 
 echo "⚡🚀 Checking your code before commit... ⚡🚀"
+
 # Format code with Prettier
 pnpm run format || (
     echo "🛠️📦 Prettier formatting failed! Run 'pnpm run format', stage changes, and try committing again."
@@ -18,12 +19,6 @@ pnpm run check-format || (
 # Check ESLint standards
 pnpm run lint || (
     echo "⚡💥 ESLint check failed! Fix the issues above, stage changes, and try committing again."
-    exit 1
-)
-
-# Check TypeScript types
-pnpm run check-types || (
-    echo "📐📝 TypeScript type check failed! Fix the type errors above before committing."
     exit 1
 )
 

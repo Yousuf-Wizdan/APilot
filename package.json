@@ -13,8 +13,10 @@
     "check-types": "tsc --pretty --noEmit"
   },
   "dependencies": {
+    "@daveyplate/better-auth-ui": "^3.2.5",
     "@prisma/client": "6.16.2",
     "@radix-ui/react-slot": "^1.2.3",
+    "better-auth": "^1.3.23",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
