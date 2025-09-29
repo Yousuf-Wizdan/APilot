@@ -1,0 +1,8 @@
+#!/bin/sh
+# . "$(dirname "$0")/_/husky.sh"
+
+echo "🏗️ Running build before push..."
+pnpm run build || (
+  echo "💥 Build failed! Fix errors before pushing."
+  exit 1
+)

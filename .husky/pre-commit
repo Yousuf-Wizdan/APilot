@@ -1,8 +1,13 @@
 # .husky/pre-commit
 
-. "$(dirname "$0")/_/husky.sh"
+# . "$(dirname "$0")/_/husky.sh"
 
 echo "⚡🚀 Checking your code before commit... ⚡🚀"
+# Format code with Prettier
+pnpm run format || (
+    echo "🛠️📦 Prettier formatting failed! Run 'pnpm run format', stage changes, and try committing again."
+    exit 1
+)
 
 # Check Prettier standards
 pnpm run check-format || (
