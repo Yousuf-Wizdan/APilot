@@ -1,3 +1,4 @@
+import { redirectAuth } from "@/modules/authentication/actions";
 import { AuthView } from "@daveyplate/better-auth-ui";
 import { authViewPaths } from "@daveyplate/better-auth-ui/server";
 
@@ -14,9 +15,26 @@ export default async function AuthPage({
 }) {
   const { path } = await params;
 
+  if (path !== "sign-out") {
+    await redirectAuth();
+  }
+
   return (
-    <main className="container flex grow flex-col items-center justify-center self-center p-4 md:p-6">
-      <AuthView path={path} />
-    </main>
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="text-center space-y-3">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-200 to-green-300 bg-clip-text text-transparent">
+          Get Started
+        </h1>
+        <p className="text-emerald-200/70 text-sm leading-relaxed">
+          Join the future of AI-powered development
+        </p>
+      </div>
+
+      {/* Auth Form */}
+      <div className="w-full">
+        <AuthView path={path} />
+      </div>
+    </div>
   );
 }

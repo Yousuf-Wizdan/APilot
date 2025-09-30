@@ -1,15 +1,13 @@
-import { UserButton } from '@daveyplate/better-auth-ui'
-import React from 'react'
+import { UserButton } from "@daveyplate/better-auth-ui";
+import React from "react";
 
 const HomePage = () => {
   return (
     <div>
-        HomePage
-        <UserButton 
-            
-        />
+      HomePage
+      <UserButton />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

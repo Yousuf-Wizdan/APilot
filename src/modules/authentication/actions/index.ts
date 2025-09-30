@@ -3,8 +3,9 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/prisma";
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-const currentUser = async () => {
+export const currentUser = async () => {
   try {
     const session = await auth.api.getSession({
       headers: await headers(),
@@ -32,5 +33,17 @@ const currentUser = async () => {
   } catch (err) {
     console.error("Error Fetching current User", err);
     return null;
+  }
+};
+
+export default currentUser;
+
+export const redirectAuth = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (session?.user?.id) {
+    redirect("/home");
   }
 };
