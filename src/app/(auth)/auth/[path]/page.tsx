@@ -21,15 +21,6 @@ export default async function AuthPage({
 
   return (
     <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-3">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-200 to-green-300 bg-clip-text text-transparent">
-          Get Started
-        </h1>
-        <p className="text-emerald-200/70 text-sm leading-relaxed">
-          Join the future of AI-powered development
-        </p>
-      </div>
 
       {/* Auth Form */}
       <div className="w-full">

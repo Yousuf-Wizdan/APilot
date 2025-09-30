@@ -1,25 +1,25 @@
-# # .husky/pre-commit
+# .husky/pre-commit
 
-# # . "$(dirname "$0")/_/husky.sh"
+# . "$(dirname "$0")/_/husky.sh"
 
-# echo "⚡🚀 Checking your code before commit... ⚡🚀"
+echo "⚡🚀 Checking your code before commit... ⚡🚀"
 
-# # Format code with Prettier
-# pnpm run format || (
-#     echo "🛠️📦 Prettier formatting failed! Run 'pnpm run format', stage changes, and try committing again."
-#     exit 1
-# )
+# Format code with Prettier
+pnpm run format || (
+    echo "🛠️📦 Prettier formatting failed! Run 'pnpm run format', stage changes, and try committing again."
+    exit 1
+)
 
-# # Check Prettier standards
-# pnpm run check-format || (
-#     echo "🛠️📦 Prettier check failed! Run 'pnpm run format', stage changes, and try committing again."
-#     exit 1
-# )
+# Check Prettier standards
+pnpm run check-format || (
+    echo "🛠️📦 Prettier check failed! Run 'pnpm run format', stage changes, and try committing again."
+    exit 1
+)
 
-# # Check ESLint standards
-# pnpm run lint || (
-#     echo "⚡💥 ESLint check failed! Fix the issues above, stage changes, and try committing again."
-#     exit 1
-# )
+# Check ESLint standards
+pnpm run lint || (
+    echo "⚡💥 ESLint check failed! Fix the issues above, stage changes, and try committing again."
+    exit 1
+)
 
-# echo "✅🚀 All checks passed! Ready to commit! ✅🚀"
+echo "✅🚀 All checks passed! Ready to commit! ✅🚀"
